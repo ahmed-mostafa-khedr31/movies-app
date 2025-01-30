@@ -7,6 +7,7 @@ import image from '../images/s.png';
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies, searchMovies } from "../data/moviesSlice";
 import { useDebounce } from "use-debounce";
+import { Helmet } from 'react-helmet';
 const CardMovie = lazy(() => import('../components/CardMovie'));
 
 const MovieList = () => {
@@ -41,7 +42,10 @@ const MovieList = () => {
   return (
 
     <>
-
+      <Helmet>
+        <title>Movies</title>
+        <meta name="description" content={'see all movies and films you needs'} />
+      </Helmet>
       <Row className="mt-3 " style={{ display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#c90614", height: "100px", direction: "ltr", borderRadius: "10px", color: "white", position: "relative", zIndex: "10" }}>
         <div style={{ display: "flex", justifyContent: "center", width: "95%", position: "relative" }}>
           <img src={image} className="search-img" alt="Movie Pic" />
